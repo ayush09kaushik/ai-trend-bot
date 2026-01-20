@@ -50,12 +50,7 @@ def post_tweet():
     except Exception as e:
         print("Error:", e)
 
-times = ["07:00","09:00","11:00","13:00","15:00","17:00","19:00","21:00","23:00","01:00"]
-for t in times:
-    schedule.every().day.at(t).do(post_tweet)
-
-print("AI Trend Bot (Secure Cloud Mode) Running...")
-
-while True:
-    schedule.run_pending()
-    time.sleep(60)
+if __name__ == "__main__":
+    print("AI Trend Bot (GitHub Actions Mode) Running...")
+    post_tweet()
+    print("Tweet posted, job finished.")
